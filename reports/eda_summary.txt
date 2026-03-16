@@ -1,0 +1,42 @@
+
+EDA KEY FINDINGS — LOAN DEFAULT RISK ENGINE
+=============================================
+
+1. CLASS IMBALANCE
+   - 80.4% Fully Paid vs 19.6% Charged Off
+   - Mild imbalance → Handle with class weights in Keras
+
+2. STRONGEST PREDICTOR
+   - int_rate: -0.25 correlation with loan_repaid
+   - Sub grade staircase: A1=3% default → G5=51% default
+   - Interest rate is the clearest default signal
+
+3. INCOME INSIGHT
+   - Q1 income → 24% default rate
+   - Q4 income → 15% default rate
+   - Lower income = higher default risk
+   - Loan officer action: Extra scrutiny for low income
+
+4. DTI INSIGHT
+   - Defaulters have higher DTI (median ~19 vs ~16)
+   - Higher loan amounts also correlate with default
+   - Loan officer action: Cap loans for DTI > 25
+
+5. LOAN PURPOSE INSIGHT
+   - small_business → 29% default (highest risk)
+   - wedding → 12% default (lowest risk)
+   - Business loans carry significantly higher risk
+
+6. MULTICOLLINEARITY FOUND
+   - loan_amnt ↔ installment: 0.95 → DROP installment
+   - open_acc ↔ total_acc: 0.68 → Monitor
+   - pub_rec ↔ pub_rec_bankruptcies: 0.70 → Monitor
+
+7. WEAK FEATURES IDENTIFIED
+   - emp_length → flat default rate across all values
+   - pub_rec → mild increase but inconsistent pattern
+
+8. FEATURE IMPORTANCE PREDICTION
+   - int_rate will likely be top model feature
+   - sub_grade will be highly predictive
+   - annual_inc will contribute negatively to default
