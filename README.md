@@ -5,7 +5,7 @@
 ![Streamlit](https://img.shields.io/badge/App-Streamlit-red)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 
-🔗 **Live App:** [Launch Loan Default Risk Engine](https://loan-default-risk-engine-58fups7snrd3vpv2lzxgmn.streamlit.app)
+🔗 **Live App:** [Launch Loan Default Risk Engine](https://loan-default-risk-engine-arup-roy.streamlit.app)
 
 An end-to-end deep learning pipeline that predicts loan default 
 risk on 395,000+ LendingClub applications — built around the 
